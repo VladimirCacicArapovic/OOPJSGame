@@ -253,9 +253,10 @@ function spin() {
             });
 
             mainObj.historyShow();
+            // Showing main numbers
             mainObj.showNumbers(sortNum);
-            // Timeout so we will have some time before extra numbers are showed
-            setTimeout(function(){ mainObj.showNumbers(sortNumExtra,true); }, 500);
+            // Showing extra numbers
+            mainObj.showNumbers(sortNumExtra,true);
         }
     })
 }
