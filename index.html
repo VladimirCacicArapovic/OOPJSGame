@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Challenge: Lottery Number Picker</title>
+    <link rel="stylesheet" type="text/css" href="./game.css">
+</head>
+<body>
+<div id="wrap">
+
+    <div id="leftSide">
+        <button type="button" onclick="spin();" class="start">START</button>
+        <div>Number of Bolls: <input type="number" id="bollNumber" class="inputNumbers"></div>
+        <div>Number of  Extra Bolls: <input type="number" id="bollExtraNumber" class="inputNumbers"></div>
+        <div>Range : From: <input type="number" id="from" class="inputNumbers"> To: <input type="number" id="to" class="inputNumbers"></div>
+        <div style="overflow: hidden"><p style="float: left">Colour Range:</p> <div id="rangeColor"></div></div>
+        <div>Last 3 rolls:<br><div id="history"></div></div>
+    </div>
+    <div id="rightSide"> <div id="info"></div></div>
+</div>
+</body>
+
+<script type="text/javascript" src="gameOOP.js"></script>
+</html>
