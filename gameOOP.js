@@ -2,6 +2,7 @@
  * Created by Vladimir on 21/07/2017.
  * Example of simple OOP javascript game
  *  Click on start button and discover your lucky numbers :)
+ *  TODO when u change range to add or remove colors ranges pickers
  *
  */
 
