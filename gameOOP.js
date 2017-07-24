@@ -15,12 +15,12 @@ var historyElement =  document.getElementById("history");
 
 //Main object
 function Main() {
-    this.countBolls = 6;
+    this.countBalls = 6;
     this.from = 1;
-    this.extraCountBolls = 1;
+    this.extraCountBalls = 1;
     this.defaultColor = '#cccccc';
     this.to = 49;
-    this.bollsSelection = [
+    this.BallsSelection = [
         {range: [1, 9], color: '#008000'},
         {range: [10, 19], color: '#ffc0cb'},
         {range: [20, 29], color: '#0000ff'},
@@ -44,14 +44,14 @@ var mainObj = new Main();
  * Adding Listeners and populating fields on load
  */
 Main.prototype.populatePage=function(){
-    rangeColorCreateElement.value = this.countBolls;
+    rangeColorCreateElement.value = this.countBalls;
     rangeColorCreateElement.addEventListener('change',function (ref) {
-        mainObj.countBolls = parseInt(ref.target.value);
+        mainObj.countBalls = parseInt(ref.target.value);
     });
 
-    rangeColorCreateExtraElement.value = this.extraCountBolls;
+    rangeColorCreateExtraElement.value = this.extraCountBalls;
     rangeColorCreateExtraElement.addEventListener('change',function (ref) {
-        mainObj.extraCountBolls = parseInt(ref.target.value);
+        mainObj.extraCountBalls = parseInt(ref.target.value);
     });
 
     fromElement.value = this.from;
@@ -75,7 +75,7 @@ Main.prototype.populatePage=function(){
  */
 Main.prototype.colorListener = function (ref) {
     var getIndex = parseInt(ref.target.getAttribute('data-index'));
-    mainObj.bollsSelection[getIndex].color = ref.target.value;
+    mainObj.BallsSelection[getIndex].color = ref.target.value;
 };
 
 /**
@@ -85,17 +85,17 @@ Main.prototype.rangeColorCreate = function () {
     var rangeColorCreateElement = document.getElementById("rangeColor"),
         createFragment = document.createDocumentFragment();
 
-    for (var i = 0; i < this.bollsSelection.length; i++) {
+    for (var i = 0; i < this.BallsSelection.length; i++) {
         var inputDiv = document.createElement('div');
         var inputColor = document.createElement('input');
         var inputText= document.createElement('p');
         inputDiv.style.float = 'left';
         inputDiv.style.textAlign = 'center';
-        inputText.innerHTML = this.bollsSelection[i].range[0] +'-'+  this.bollsSelection[i].range[1];
+        inputText.innerHTML = this.BallsSelection[i].range[0] +'-'+  this.BallsSelection[i].range[1];
         inputDiv.appendChild(inputText);
 
         inputColor.setAttribute("type", "color");
-        inputColor.value = this.bollsSelection[i].color;
+        inputColor.value = this.BallsSelection[i].color;
         inputColor.className = 'color';
         inputColor.setAttribute("data-index", i);
         inputColor.addEventListener('change',this.colorListener);
@@ -142,12 +142,12 @@ Main.prototype.RandomIntFromInterval = function (min, max, times,extra) {
 };
 
 /**
- * Bolls selecting Colors
+ * Balls selecting Colors
  */
 Main.prototype.colorsChange = function (number) {
-    for (var i = 0; i < this.bollsSelection.length; i++) {
-        if ((number >= this.bollsSelection[i].range[0] && number <= this.bollsSelection[i].range[1])) {
-            return this.bollsSelection[i].color
+    for (var i = 0; i < this.BallsSelection.length; i++) {
+        if ((number >= this.BallsSelection[i].range[0] && number <= this.BallsSelection[i].range[1])) {
+            return this.BallsSelection[i].color
         }
     }
     //Default color if is out of range
@@ -186,7 +186,7 @@ Main.prototype.historyShow = function() {
 };
 
 /**
- *  Showing bolls on the screen
+ *  Showing Balls on the screen
  * @param numbers
  */
 Main.prototype.showNumbers = function (numbers,bollType) {
@@ -199,7 +199,7 @@ Main.prototype.showNumbers = function (numbers,bollType) {
 
     for (var i = 0; i < numbLength; i++) {
         var color = this.colorsChange(numbers[i]);
-        // Creating and showing bolls
+        // Creating and showing Balls
         number = document.createElement('div');
         number.innerHTML = numbers[i];
         number.style.background = color;
