@@ -35,7 +35,10 @@
     border-radius: 50%;
 }
 
-
+#historyWrapper{
+    clear: both;
+    margin-left: 35px;
+}
 .inputNumbers {
     width: 40px;
 }

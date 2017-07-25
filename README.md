@@ -1,2 +1,2 @@
 Simple OOPJS Lottery game .
-Press start and dicover your lucky numbers :)
+Press start and discover your lucky numbers :)
